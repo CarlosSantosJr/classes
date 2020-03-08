@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+//Testing
+
 int array_sum(int *tab, int size);
 
 int main () {
