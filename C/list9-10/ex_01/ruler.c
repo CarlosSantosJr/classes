@@ -1,16 +1,32 @@
+#include "rubiks.h"
 #include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 
 void print_tab(int **tab) {
+	char nbr;
+	char *line = "-----------------";
+	char between = '|';
+	char lineBreak = '\n';
+	char space = ' ';
+	
     for(int i = 0; i < 4; i++) {
-        printf("-----------------\n");
+    	write(1, line, 17);
+    	write(1, &lineBreak, 1);
+    	
         for(int j = 0; j < 4; j++) {
-            printf("| %d ", tab[i][j]);
+			nbr = tab[i][j] + '0';
+			write(1, &between, 1);
+			write(1, &space, 1);
+			write(1, &nbr, 1);
+			write(1, &space, 1);
         }
-        printf("|\n");
+		write(1, &between, 1);
+		write(1, &lineBreak, 1);
     }
-    printf("-----------------\n\n");
-}
+	write(1, line, 17);
+	write(1, &lineBreak, 1);
+	write(1, &lineBreak, 1);
+}    
 
 int main() {
     int **tab = NULL;
@@ -23,6 +39,5 @@ int main() {
             tab[i][j] = j;
         }
     }
-
     print_tab(tab);
 }
