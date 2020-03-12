@@ -1,3 +1,4 @@
+#include "rubiks.h"
 #include <unistd.h>
 
 void print_tab(int **tab) {
@@ -25,5 +26,3 @@ void print_tab(int **tab) {
 	write(1, &lineBreak, 1);
 	write(1, &lineBreak, 1);
 }    
-
-
