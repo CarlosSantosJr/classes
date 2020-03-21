@@ -21,10 +21,5 @@ void print_unique(int *array, int size) {
             isUnique = 1;
         }
     }
-}
-
-int main() {
-    int tab[] = {0, 0, 2, 3, 4, 3, 6, 1};
-    print_unique(tab, 8);
-    return (0);
+    printf("\n");
 }
